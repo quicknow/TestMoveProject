@@ -1,0 +1,8 @@
+<suite name="TestNGSuite">
+	<test name="test1">
+		<classes>
+			<class name="cn.gloryorad.testScripts.TestMail126Login"/>
+			<class name="cn.gloryorad.testScripts.TestMail126AddContactPerson"/>
+		</classes>>
+	</test>
+</suite>

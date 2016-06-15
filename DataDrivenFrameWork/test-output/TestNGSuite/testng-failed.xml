@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestNGSuite]">
+  <test name="test1(failed)">
+    <classes>
+      <class name="cn.gloryorad.testScripts.TestMail126Login">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="beforeclass"/>
+          <include name="afterMethod"/>
+          <include name="testMailLogin"/>
+        </methods>
+      </class> <!-- cn.gloryorad.testScripts.TestMail126Login -->
+      <class name="cn.gloryorad.testScripts.TestMail126AddContactPerson">
+        <methods>
+          <include name="BeforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- cn.gloryorad.testScripts.TestMail126AddContactPerson -->
+    </classes>
+  </test> <!-- test1(failed) -->
+</suite> <!-- Failed suite [TestNGSuite] -->
