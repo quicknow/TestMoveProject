@@ -47,7 +47,7 @@ public class TestMail126AddContactPerson {
 			AddContactPerson_Action.execute(driver, mailUserName, mailPassWord, contactPersonName, contactPersonEmail, contactPersonMobile);
 		} catch(AssertionError error){
 			Log.info("添加联系人失败");
-			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[.]")[0]), ExcelUtil.getLastColumnNum(), "测试执行失败");
+			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber), ExcelUtil.getLastColumnNum(Integer.parseInt(CaseRowNumber)), "测试执行失败");
 			Assert.fail("执行AddContactPerson_Action类的execute方法后，休眠3秒");				
 		}
 		
@@ -59,7 +59,7 @@ public class TestMail126AddContactPerson {
 			Assert.assertTrue(driver.getPageSource().contains(assertContactPersonName));
 		} catch(AssertionError error){
 			Log.info("断言通讯录的页面是否包含联系人姓名的关键字失败");
-			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[.]")[0]), ExcelUtil.getLastColumnNum(), "测试执行失败");
+			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber), ExcelUtil.getLastColumnNum(Integer.parseInt(CaseRowNumber)), "测试执行失败");
 			Assert.fail("断言通讯录的页面是否包含联系人姓名的关键字失败");
 		}
 		Log.info("断言通讯录的页面是否包含联系人电子邮件地址的关键字");
@@ -68,7 +68,7 @@ public class TestMail126AddContactPerson {
 			Assert.assertTrue(driver.getPageSource().contains(assertContactPersonEmail));
 		} catch(AssertionError error){
 			Log.info("断言通讯录的页面是否包含联系人姓名的电子邮件地址失败");
-			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[.]")[0]), ExcelUtil.getLastColumnNum(), "测试执行失败");
+			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber), ExcelUtil.getLastColumnNum(Integer.parseInt(CaseRowNumber)), "测试执行失败");
 			Assert.fail("断言通讯录的页面是否包含联系人姓名的电子邮件地址失败");
 		}
 		
@@ -78,12 +78,12 @@ public class TestMail126AddContactPerson {
 			Assert.assertTrue(driver.getPageSource().contains(assertContactPersonMobile));
 		} catch(AssertionError error){
 			Log.info("断言通讯录的页面是否包含联系人手机号的关键字失败");
-			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[.]")[0]), ExcelUtil.getLastColumnNum(), "测试执行失败");
+			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[.]")[0]), ExcelUtil.getLastColumnNum(Integer.parseInt(CaseRowNumber)), "测试执行失败");
 			Assert.fail("断言通讯录的页面是否包含联系人手机号的关键字失败");
 		}
 		
 		Log.info("新建联系人的全部断言成功，在Excel的测试数据文件的“测试执行结果”列中写入“执行成功”");
-		ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[0]")[0]), ExcelUtil.getLastColumnNum(), "执行成功");
+		ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber), ExcelUtil.getLastColumnNum(Integer.parseInt(CaseRowNumber)), "执行成功");
 		Log.info("测试结果成功写入excel数据文件的“测试执行结果”列");
 		Log.endTestCase(testCaseName);
 	}

@@ -81,7 +81,7 @@ public  class ExcelUtil {
 			fileOut.flush();
 			fileOut.close();
 		} catch(Exception e){
-			throw (e);
+			e.printStackTrace();
 		}
 	}	
 		
@@ -122,10 +122,10 @@ public  class ExcelUtil {
 				 */
 				
 				for(int i=testCaseStartRowNumber;i<ExcelUtil.getRowCount(SheetName)+1;i++){
+					number=i;
 					
-					if(!testCaseName.equals(ExcelUtil.getCellData(SheetName,i,1))){
+					if(!testCaseName.equals(ExcelUtil.getCellData(SheetName,i,1))){		
 						
-						number=i;
 						return number-1;
 					}
 				}				
@@ -195,8 +195,8 @@ public  class ExcelUtil {
 	}
 
 	
-	public static int getLastColumnNum(){
-		return ExcelWSheet.getRow(0).getLastCellNum()-1;
+	public static int getLastColumnNum(int rownum){
+		return ExcelWSheet.getRow(rownum).getLastCellNum()-1;
 	}
 	
 	//获取指定Sheet中的总行数

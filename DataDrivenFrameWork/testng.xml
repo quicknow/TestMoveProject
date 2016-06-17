@@ -3,6 +3,7 @@
 		<classes>
 			<class name="cn.gloryorad.testScripts.TestMail126Login"/>
 			<class name="cn.gloryorad.testScripts.TestMail126AddContactPerson"/>
+			<class name="cn.gloryorad.testScripts.TestMail126Send"/>
 		</classes>>
 	</test>
 </suite>

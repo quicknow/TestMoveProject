@@ -45,7 +45,7 @@ public class TestMail126Send {
 			SendMailToFriend_Action.execute(driver, userName,password,receiverName,titleName);
 		} catch(AssertionError error){
 			Log.info("发送邮件失败");
-			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[.]")[0]), ExcelUtil.getLastColumnNum(), "测试执行失败");
+			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber), ExcelUtil.getLastColumnNum(Integer.parseInt(CaseRowNumber)), "测试执行失败");
 			Assert.fail("执行SendMailToFriend_Action类的execute方法后，休眠3秒");				
 		}
 		
@@ -57,12 +57,12 @@ public class TestMail126Send {
 			Assert.assertTrue(driver.getPageSource().contains(assertText));
 		} catch(AssertionError error){
 			Log.info("发送邮件之后的页面不包含‘发送成功’");
-			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[.]")[0]), ExcelUtil.getLastColumnNum(), "测试执行失败");
+			ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber), ExcelUtil.getLastColumnNum(Integer.parseInt(CaseRowNumber)), "测试执行失败");
 			Assert.fail("发送邮件失败");
 		}		
 		
-		Log.info("发送邮件的全部断言成功，在Excel的测试数据文件的“测试执行结果”列中写入“执行成功”");
-		ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber.split("[0]")[0]), ExcelUtil.getLastColumnNum(), "执行成功");
+		Log.info("发送邮件的全部断言成功，在Excel的测试数据文件的“测试执行结果”列中写入“执行成功”");		
+		ExcelUtil.setCellData(Integer.parseInt(CaseRowNumber), ExcelUtil.getLastColumnNum(Integer.parseInt(CaseRowNumber)), "执行成功");
 		Log.info("测试结果成功写入excel数据文件的“测试执行结果”列");
 		Log.endTestCase(testCaseName);
 	}
